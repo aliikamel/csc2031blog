@@ -7,19 +7,18 @@
         <div class="box">
             <form method="POST">
                 <div class="field">
-                    {{  form._csrf_token() }}
+                    {{ form.csrf_token() }}
                     <div class="control">
-                        {{ form.username (class="input", placeholder="Username") }}
+                        {{ form.username(class="input", placeholder="Username") }}
                     </div>
                 </div>
                 <div class="field">
-                    {{  form._csrf_token() }}
                     <div class="control">
-                        {{ form.password (class="input", placeholder="Password") }}
+                        {{ form.password(class="input", placeholder="Password") }}
                     </div>
                 </div>
                 <div>
-                    {{ form.submit (class="button is-info is-centered") }}
+                    {{ form.submit(class="button is-info is-centered") }}
                 </div>
             </form>
         </div>
