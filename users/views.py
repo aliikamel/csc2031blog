@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from users.forms import RegisterForm
+from users.forms import RegisterForm, LoginForm
 
 users_blueprint = Blueprint('users', __name__, template_folder='templates')
 
@@ -18,7 +18,8 @@ def register():
 
 @users_blueprint.route('/login')
 def login():
-    return render_template('users/login.html')
+    form = LoginForm()
+    return render_template('users/login.html', form=form)
 
 
 @users_blueprint.route('/logout')
