@@ -2,6 +2,28 @@
 
 {% block content %}
 
-    <h1 class="title is-1">register</h1>
+    <div class="column is-5 is-offset-4">
+        <h3 class="title is-3">Register</h3>
+        <div class="box">
+            <form method="POST">
+                <div class="field">
+                    {{  form._csrf_token() }}
+                    <div class="control">
+                        {{ form.username (class="input", placeholder="Username") }}
+                    </div>
+                </div>
+                <div class="field">
+                    {{  form._csrf_token() }}
+                    <div class="control">
+                        {{ form.password (class="input", placeholder="Password") }}
+                    </div>
+                </div>
+                <div>
+                    {{ form.submit (class="button is-info is-centered") }}
+                </div>
+            </form>
+        </div>
+    </div>
+
 
 {% endblock %}
