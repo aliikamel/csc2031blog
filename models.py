@@ -8,6 +8,6 @@ class User(db.Model):
     username = db.Column(db.String(length=100), nullable=False, unique=True)
     password = db.Column(db.String(length=100), nullable=False)
 
-    def __int__(self, username, password):
+    def __init__(self, username, password):
         self.username = username
         self.password = password
