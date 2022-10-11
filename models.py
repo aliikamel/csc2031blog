@@ -21,7 +21,7 @@ class Post(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(length=100), db.ForeignKey(User.username), nullable=True)
-    created = db.Column(db.Datetime)
+    created = db.Column(db.Datetime, nullable=False)
     title = db.Column(db.Text, nullable=False)
     body = db.Column(db.Text, nullable=False)
 
