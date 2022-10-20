@@ -1,10 +1,8 @@
-from flask import Flask, render_template
-from main.views import main_blueprint
-from blog.views import blog_blueprint
-from users.views import users_blueprint
 import os
+from flask import Flask, render_template
 from dotenv import load_dotenv
 from flask_sqlalchemy import SQLAlchemy
+
 
 load_dotenv()
 
@@ -15,6 +13,9 @@ app.config['SQLALCHEMY_ECHO'] = os.getenv('SQLALCHEMY_ECHO') == 'True'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.getenv('SQL_TRACK_MODIFICATIONS') == 'True'
 db = SQLAlchemy(app)
 
+from main.views import main_blueprint
+from blog.views import blog_blueprint
+from users.views import users_blueprint
 
 app.register_blueprint(main_blueprint)
 app.register_blueprint(blog_blueprint)
@@ -36,12 +37,7 @@ def function_name(error):
     return render_template('500.html'), 500
 
 
-def init_db():
-    with app.app_context():
-        db.drop_all()
-        db.create_all()
 
 
 if __name__ == '__main__':
     app.run()
-

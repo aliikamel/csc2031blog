@@ -1,6 +1,7 @@
-Flask
-WTForms
+Flask~=2.2.2
+WTForms~=3.0.1
 Flask_WTF
 email_validator
-python-dotenv
+python-dotenv~=0.21.0
 flask_sqlalchemy
+SQLAlchemy~=1.4.41
